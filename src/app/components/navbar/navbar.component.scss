@@ -1,0 +1,45 @@
+.navbar {
+  max-width: 100%;
+  height: 80px;
+  padding-left: 95px;
+  padding-right: 95px;
+  color: rgba(0,116,236,.9294117647);
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+
+
+  .navbar-container {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgba(4, 0, 236, 0.929);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    a img {
+      width: 150px;
+      height: 80px;
+    }
+
+    ul {
+      list-style: none
+    }
+
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 auto;
+      gap: 40px;
+
+
+    }
+  }
+}
