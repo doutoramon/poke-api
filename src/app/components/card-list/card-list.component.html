@@ -1,1 +1,28 @@
-<p>card-list works!</p>
+<app-search (search)="searchPokemon($event)"></app-search>
+
+<main>
+  <ng-container *ngIf="!searchNoResults">
+    <div class="card" *ngFor="let pokemon of filteredPokemons">
+      <div class="card-body" (click)="goToDetail(pokemon.id)">
+        <div class="img-pokemon">
+          <img [src]="pokemon.image" alt="{{ pokemon.name }}">
+        </div>
+        <div class="card-description">
+          <p class="name">{{ pokemon.name }}</p>
+          <p class="id">#{{ pokemon.id }}</p>
+          <span *ngFor="let type of pokemon.types" class="type">{{ type }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div *ngIf="searchNoResults" class="no-results-message">
+    Ops, desculpe, não conseguimos encontrar nenhum Pokémon.
+  </div>
+</main>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }}</span>
+  <button (click)="nextPage()">Next</button>
+</div>
